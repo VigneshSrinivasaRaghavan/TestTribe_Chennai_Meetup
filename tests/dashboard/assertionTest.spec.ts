@@ -1,8 +1,12 @@
 import {test, expect} from '@playwright/test'
 import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
 
 test.beforeEach(async()=>{
   await allure.owner("Dashboard Team");
+  await allure.tags("Regrssion");
+  await allure.severity(Severity.BLOCKER);
+  await allure.feature('Dashboard');
 })
 test('Visible/Hidden Assertion',async({page})=>{
     await allure.description("This is to test the Assertion for Visible/Hidden");

@@ -1,8 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
 
 test.beforeEach(async()=>{
   await allure.owner("Checkout Team");
+  await allure.tags("Sanity");
+    await allure.severity(Severity.MINOR);
+    await allure.feature('Checkout');
 })
 
 test('Regular Button single click', async ({ page }) => {

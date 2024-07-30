@@ -1,8 +1,12 @@
 import { test, expect } from '@playwright/test'
 import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
 
 test.beforeEach(async () => {
     await allure.owner("Checkout Team");
+    await allure.tags("Smoke");
+    await allure.severity(Severity.CRITICAL);
+    await allure.feature('Checkout');
 })
 
 test('Simple Alert Handling', async ({ page }) => {

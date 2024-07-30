@@ -1,8 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
 
 test.beforeEach(async()=>{
   await allure.owner("Dashboard Team");
+  await allure.tags("Smoke", "Regression");
+  await allure.severity(Severity.NORMAL);
+  await allure.feature('Dashboard');
 })
 
 test('Using Fill Method', async ({ page }) => {
