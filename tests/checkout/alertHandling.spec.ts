@@ -7,6 +7,9 @@ test.beforeEach(async () => {
     await allure.tags("Smoke");
     await allure.severity(Severity.CRITICAL);
     await allure.feature('Checkout');
+    await allure.link("https://example.com/docs", "Related Documentation");
+    await allure.issue("AUTH-123", "https://example.com/issues/AUTH-123");
+    await allure.tms("TMS-456", "https://example.com/tms/TMS-456");
 })
 
 test('Simple Alert Handling', async ({ page }) => {
