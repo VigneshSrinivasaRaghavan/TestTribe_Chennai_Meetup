@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "copy:history": "xcopy allure-report\\history allure-results\\history /E /Y",
-    "generate:reports": "npm run copy:history && npx allure generate ./allure-results --clean",
+    "generate:reports": "npm run copy:history && npx allure generate --single-file ./allure-results --clean",
     "open:reports": "npx allure open ./allure-report",
     "posttest": "npm run generate:reports && npm run open:reports",
     "execute:script": "npx playwright test --project=chromium",
